@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import VideoSection from "@/components/sections/VideoSection";
@@ -11,24 +12,51 @@ import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <VideoSection />
-        <section id="process">
+
+      <main id="main-content" className="flex-1">
+        {/* HERO — must contain the ONLY H1 */}
+        <section id="hero" aria-labelledby="hero-title">
+          <HeroSection />
+        </section>
+
+        {/* ABOUT */}
+        <section id="about" aria-labelledby="about-title">
+          <AboutSection />
+        </section>
+
+        {/* VIDEO */}
+        <section id="video" aria-labelledby="video-title">
+          <VideoSection />
+        </section>
+
+        {/* PROCESS */}
+        <section id="process" aria-labelledby="process-title">
           <ProcessSection />
         </section>
-        <section id="testimonials">
+
+        {/* TESTIMONIALS */}
+        <section id="testimonials" aria-labelledby="testimonials-title">
           <TestimonialsSection />
         </section>
-        <section id="pricing">
+
+        {/* PRICING */}
+        <section id="pricing" aria-labelledby="pricing-title">
           <PricingSection />
         </section>
-        <FAQSection />
-        <ContactSection />
+
+        {/* FAQ */}
+        <section id="faq" aria-labelledby="faq-title">
+          <FAQSection />
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" aria-labelledby="contact-title">
+          <ContactSection />
+        </section>
       </main>
+
       <Footer />
     </div>
   );
